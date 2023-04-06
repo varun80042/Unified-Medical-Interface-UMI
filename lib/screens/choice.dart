@@ -14,17 +14,17 @@ class Choice extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(
-                height: 180.0,
+                height: 220.0,
               ),
               const Image(
                 image: AssetImage('assets/images/logo.png'),
-                height: 180,
+                height: 100,
               ),
               const SizedBox(
-                height: 5,
+                height: 8,
               ),
               Text(
-                "Keeping you safe and informed",
+                "Unified Medical Interface",
                 style: TextStyle(
                     fontFamily: "Times New Roman",
                     fontSize: 22,
@@ -32,17 +32,17 @@ class Choice extends StatelessWidget {
                     foreground: Paint()
                       ..style = PaintingStyle.stroke
                       ..strokeWidth = 2.0
-                      ..color = Colors.redAccent),
+                      ..color = Colors.red),
               ),
               const SizedBox(
-                height: 110,
+                height: 100,
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/login');
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.pink[400],
+                  backgroundColor: Colors.red,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
@@ -61,7 +61,7 @@ class Choice extends StatelessWidget {
                   Navigator.pushNamed(context, '/register');
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.pink[400],
+                  backgroundColor: Colors.red,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),

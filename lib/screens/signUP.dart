@@ -50,7 +50,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   children: [
                     const Image(
                       image: AssetImage('assets/images/logo.png'),
-                      height: 150,
+                      height: 100,
                     ),
                     const SizedBox(
                       height: 30,
@@ -180,7 +180,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.pink[400],
+                        backgroundColor: Colors.red,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),
@@ -215,7 +215,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.pink[400],
+                        backgroundColor: Colors.red,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),

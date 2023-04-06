@@ -50,103 +50,45 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     const Image(
                       image: AssetImage('assets/images/logo.png'),
-                      height: 150,
+                      height: 100,
                     ),
                     const SizedBox(
-                      height: 50,
+                      height: 80,
                     ),
-                    Text(
-                      "Food or Clothes (if any)",
-                      style: TextStyle(
-                          fontFamily: "Times New Roman",
-                          fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 10,),
-                    SizedBox(
-                      width: 320.0,
-                      height: 115,
-                      child: TextField(
-                        style: const TextStyle(color: Colors.black),
-                        maxLines: 5,
-                        // textAlign: TextAlign.center,
-                        decoration: const InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          // hintText: "Enter your password",
-                          // prefixIcon: Icon(Icons.lock),
-                          contentPadding:
-                          EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                          border: OutlineInputBorder(
-                              borderSide: BorderSide(width: 3, color: Colors.black)),
-                        ),
-                        onChanged: (value) {
-                          resources = value;
-                        },
-                      ),
-                    ),
-                    SizedBox(height: 50,),
-                    Text(
-                      "Money (in rupees, if any)",
-                      style: TextStyle(
-                        fontFamily: "Times New Roman",
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 10,),
-                    SizedBox(
-                      width: 320.0,
-                      height: 50,
-                      child: TextField(
-                        style: const TextStyle(color: Colors.black),
-                        // textAlign: TextAlign.center,
-                        decoration: const InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          // hintText: "Enter your password",
-                          // prefixIcon: Icon(Icons.lock),
-                          contentPadding:
-                          EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                          border: OutlineInputBorder(
-                              borderSide: BorderSide(width: 3, color: Colors.black)),
-                        ),
-                        onChanged: (value) {
-                          money = int.parse(value);
-                        },
-                      ),
-                    ),
-                    SizedBox(height: 50,),
                     ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/map');
+                      },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.pink[400],
+                        backgroundColor: Colors.red,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),
                         minimumSize: const Size(150, 40),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 40, vertical: 15),
-                        textStyle: const TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                        textStyle:
+                        const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      onPressed: () async {
-                        setState(() { _isLoading = true; });
-                        _firestore.collection('resources').add({
-                          'Food/Clothes' : resources,
-                          'Money' : money,
-                        });
-                        _controllerResources.clear();
-                        _controllerMoney.clear();
-
-                        Navigator.pop(context);
-                        Navigator.pushNamed(context, '/thanks')..then((value) {
-                          setState(() {
-                            _isLoading = false;
-                          });
-                        });;
+                      child: const Text('Availability of beds'),
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/book');
                       },
-                      child: const Text('Donate Now'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        minimumSize: const Size(150, 40),
+                        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                        textStyle:
+                        const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      child: const Text('Book an Ambulance'),
                     ),
                   ],
                 ),
