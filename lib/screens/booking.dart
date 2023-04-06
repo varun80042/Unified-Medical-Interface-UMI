@@ -24,7 +24,7 @@ class _MyMapLauncherState extends State<MyMapLauncher> {
   }
 
   final coordinates = Coords(12.9395, 77.5345);
-  final destination = Coords(12.9497, 77.5392);
+  final destination = Coords(12.9421, 77.5536);
   final title = "PES University";
   final description = "PES University";
 
@@ -83,6 +83,7 @@ class _MyMapLauncherState extends State<MyMapLauncher> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+          backgroundColor: Colors.grey[300],
           appBar: AppBar(
             toolbarHeight: 80,
             backgroundColor: Colors.red,
@@ -123,76 +124,119 @@ class _MyMapLauncherState extends State<MyMapLauncher> {
                 GestureDetector(
                   onTap: () => handleBoxTap(0),
                   child: Container(
+                    height: 100,
+                    width: 250,
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: Colors.grey,
-                        width: 1,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(8),
-                      color: selectedBoxIndex == 0 ? Colors.blue[100] : null,
+                      color: selectedBoxIndex == 0 ? Colors.blue[100] : Colors.white,
                     ),
                     padding: const EdgeInsets.all(12),
                     child: Row(
                       children: [
+                        SizedBox(width: 10),
                         Icon(
                           Icons.heart_broken,
                           color: Colors.red,
+                          size: 50,
                         ),
-                        SizedBox(width: 8),
+                        SizedBox(width: 40),
                         Text("Heart Attack"),
                       ],
                     ),
                   ),
                 ),
+                SizedBox(height: 20,),
                 GestureDetector(
                   onTap: () => handleBoxTap(1),
                   child: Container(
+                    height: 100,
+                    width: 250,
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: Colors.grey,
-                        width: 1,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(8),
-                      color: selectedBoxIndex == 1 ? Colors.blue[100] : null,
+                      color: selectedBoxIndex == 1 ? Colors.blue[100] : Colors.white,
                     ),
                     padding: const EdgeInsets.all(12),
                     child: Row(
                       children: [
+                        SizedBox(width: 10),
                         Icon(
-                          Icons.heart_broken,
-                          color: Colors.red,
+                          Icons.car_crash,
+                          color: Colors.blue,
+                          size: 50,
                         ),
-                        SizedBox(width: 8),
-                        Text("Heart Attack"),
+                        SizedBox(width: 40),
+                        Text("Accident"),
                       ],
                     ),
                   ),
                 ),
+                SizedBox(height: 20,),
                 GestureDetector(
                   onTap: () => handleBoxTap(2),
                   child: Container(
+                    height: 100,
+                    width: 250,
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: Colors.grey,
-                        width: 1,
+                        width: 2,
                       ),
                       borderRadius: BorderRadius.circular(8),
-                      color: selectedBoxIndex == 2 ? Colors.blue[100] : null,
+                      color: selectedBoxIndex == 2 ? Colors.blue[100] : Colors.white,
                     ),
                     padding: const EdgeInsets.all(12),
                     child: Row(
                       children: [
+                        SizedBox(width: 10),
                         Icon(
-                          Icons.heart_broken,
-                          color: Colors.red,
+                          Icons.pregnant_woman,
+                          color: Colors.black,
+                          size: 50,
                         ),
-                        SizedBox(width: 8),
-                        Text("Heart Attack"),
+                        SizedBox(width: 40),
+                        Text("Pregnancy"),
                       ],
                     ),
                   ),
                 ),
-
+                SizedBox(height: 20,),
+                GestureDetector(
+                  onTap: () => handleBoxTap(3),
+                  child: Container(
+                    height: 100,
+                    width: 250,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                      color: selectedBoxIndex == 3 ? Colors.blue[100] : Colors.white,
+                    ),
+                    padding: const EdgeInsets.all(12),
+                    child: Row(
+                      children: [
+                        SizedBox(width: 10),
+                        Icon(
+                          Icons.question_mark,
+                          color: Colors.black,
+                          size: 50,
+                        ),
+                        SizedBox(width: 40),
+                        Text("Other"),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 35,),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,

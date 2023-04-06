@@ -113,7 +113,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         decoration: const InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
-                          hintText: "Enter your address",
+                          hintText: "Enter your Aadhaar No.",
                           prefixIcon: Icon(Icons.location_city),
                           contentPadding:
                           EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
