@@ -1,4 +1,4 @@
-# hashcode
+# Unified Medical Interface (UMI)
 
 A new Flutter project.
 
