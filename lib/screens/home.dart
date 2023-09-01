@@ -10,7 +10,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   final _firestore = FirebaseFirestore.instance;
 
   String resources = "None";
@@ -65,9 +64,10 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(50),
                         ),
                         minimumSize: const Size(150, 40),
-                        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                        textStyle:
-                        const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40, vertical: 15),
+                        textStyle: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       child: const Text('Availability of beds'),
                     ),
@@ -84,11 +84,15 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(50),
                         ),
                         minimumSize: const Size(150, 40),
-                        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                        textStyle:
-                        const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40, vertical: 15),
+                        textStyle: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       child: const Text('Book an Ambulance'),
+                    ),
+                    SizedBox(
+                      height: 25,
                     ),
                   ],
                 ),

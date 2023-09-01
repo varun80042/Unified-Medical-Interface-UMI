@@ -114,7 +114,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           filled: true,
                           fillColor: Colors.white,
                           hintText: "Enter your Aadhaar No.",
-                          prefixIcon: Icon(Icons.location_city),
+                          prefixIcon: Icon(Icons.numbers),
                           contentPadding:
                           EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                           border: OutlineInputBorder(

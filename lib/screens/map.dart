@@ -40,13 +40,31 @@ class _MarkerWithTooltipState extends State<MarkerWithTooltip> {
   }
 }
 
-class MapPage extends StatelessWidget {
+class MapPage extends StatefulWidget {
+  const MapPage({Key? key}) : super(key: key);
+
+  @override
+  State<MapPage> createState() => _MapPageState();
+}
+
+class _MapPageState extends State<MapPage> {
+  LatLng _userLocation = LatLng(0, 0); // Initial user location
+
   void getLocation() async {
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
+    setState(() {
+      _userLocation = LatLng(position.latitude, position.longitude);
+    });
   }
 
   final PopupController _popupController = PopupController();
+
+  @override
+  void initState() {
+    super.initState();
+    getLocation(); // Get the user's location when the widget is initialized.
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,11 +74,11 @@ class MapPage extends StatelessWidget {
         toolbarHeight: 80,
         backgroundColor: Colors.red,
         centerTitle: true,
-        title: Text('Availability of Seats'),
+        title: Text('Availability of Beds'),
       ),
       body: FlutterMap(
         options: MapOptions(
-          center: LatLng(12.9354, 77.5358),
+          center: LatLng(12.8897, 77.6149),
           zoom: 12.5,
         ),
         layers: [
@@ -76,7 +94,7 @@ class MapPage extends StatelessWidget {
             Marker(
               width: 80.0,
               height: 80.0,
-              point: LatLng(12.9330, 77.5345),
+              point: LatLng(12.8897, 77.6149),
               builder: (ctx) => Icon(
                 Icons.circle,
                 color: Colors.blue,
@@ -86,72 +104,159 @@ class MapPage extends StatelessWidget {
             Marker(
               width: 80.0,
               height: 80.0,
-              point: LatLng(12.9420, 77.5538),
-              builder: (ctx) => MarkerWithTooltip(
-                child: Icon(
-                  Icons.local_hospital,
-                  color: Colors.red,
-                  size: 50,
-                ),
-                  tooltip: "Meenakshi Hospital \n Available Beds: 25",
-                  onTap: () {}
-              ),
-            ),
-            Marker(
-              width: 80.0,
-              height: 80.0,
-              point: LatLng(12.9109, 77.5208),
-              builder: (ctx) => MarkerWithTooltip(
-                child: Icon(
-                  Icons.local_hospital,
-                  color: Colors.red,
-                  size: 50,
-                ),
-                  tooltip: "    Unity Hospital \nAvailable Beds: 33",
-                  onTap: () {}
-              ),
-            ),
-            Marker(
-              width: 80.0,
-              height: 80.0,
-              point: LatLng(12.9056, 77.5426),
-              builder: (ctx) => MarkerWithTooltip(
-                child: Icon(
-                  Icons.local_hospital,
-                  color: Colors.red,
-                  size: 50,
-                ),
-                  tooltip: "Nagarathna Hospital \n Available Beds: 19",
-                  onTap: () {}
-              ),
-            ),
-            Marker(
-              width: 80.0,
-              height: 80.0,
-              point: LatLng(12.9415, 77.5675),
+              point: LatLng(12.8853, 77.6153),
               builder: (ctx) => MarkerWithTooltip(
                   child: Icon(
                     Icons.local_hospital,
                     color: Colors.red,
                     size: 50,
                   ),
-                  tooltip: "\t\t\t BMS Hospital \n Available Beds: 0",
-                  onTap: () {}
-              ),
+                  tooltip: "Vigneshwara Hospital \n Available Beds: 0",
+                  onTap: () {}),
             ),
             Marker(
               width: 80.0,
               height: 80.0,
-              point: LatLng(12.9596, 77.5275),
+              point: LatLng(12.8878, 77.6104),
               builder: (ctx) => MarkerWithTooltip(
-                child: Icon(
-                  Icons.local_hospital,
-                  color: Colors.red,
-                  size: 50,
-                ),
-                  tooltip: "Hospital Sharavathi \n Available Beds: 42",
-                  onTap: () {}
-              ),
+                  child: Icon(
+                    Icons.local_hospital,
+                    color: Colors.red,
+                    size: 50,
+                  ),
+                  tooltip: "Shreya Hospitals \nAvailable Beds: 33",
+                  onTap: () {}),
+            ),
+            Marker(
+              width: 80.0,
+              height: 80.0,
+              point: LatLng(12.8954, 77.6075),
+              builder: (ctx) => MarkerWithTooltip(
+                  child: Icon(
+                    Icons.local_hospital,
+                    color: Colors.red,
+                    size: 50,
+                  ),
+                  tooltip: "Rajashri Hospitals \n Available Beds: 19",
+                  onTap: () {}),
+            ),
+            Marker(
+              width: 80.0,
+              height: 80.0,
+              point: LatLng(12.8980, 77.6207),
+              builder: (ctx) => MarkerWithTooltip(
+                  child: Icon(
+                    Icons.local_hospital,
+                    color: Colors.red,
+                    size: 50,
+                  ),
+                  tooltip: "Shrushti Hospital \n Available Beds: 5",
+                  onTap: () {}),
+            ),
+            Marker(
+              width: 80.0,
+              height: 80.0,
+              point: LatLng(12.8791, 77.6085),
+              builder: (ctx) => MarkerWithTooltip(
+                  child: Icon(
+                    Icons.local_hospital,
+                    color: Colors.red,
+                    size: 50,
+                  ),
+                  tooltip: "Sri Sairam Hospital \n Available Beds: 42",
+                  onTap: () {}),
+            ),
+            Marker(
+              width: 80.0,
+              height: 80.0,
+              point: LatLng(12.8815, 77.6268),
+              builder: (ctx) => MarkerWithTooltip(
+                  child: Icon(
+                    Icons.local_hospital,
+                    color: Colors.red,
+                    size: 50,
+                  ),
+                  tooltip: "Jayashree Hospital \n Available Beds: 16",
+                  onTap: () {}),
+            ),
+            // break
+            Marker(
+              width: 80.0,
+              height: 80.0,
+              point: LatLng(12.8953, 77.6253),
+              builder: (ctx) => MarkerWithTooltip(
+                  child: Icon(
+                    Icons.local_hospital,
+                    color: Colors.red,
+                    size: 50,
+                  ),
+                  tooltip: "Vishvesh Hospitals \n Available Beds: 10",
+                  onTap: () {}),
+            ),
+            Marker(
+              width: 80.0,
+              height: 80.0,
+              point: LatLng(12.8978, 77.6004),
+              builder: (ctx) => MarkerWithTooltip(
+                  child: Icon(
+                    Icons.local_hospital,
+                    color: Colors.red,
+                    size: 50,
+                  ),
+                  tooltip: "Suresh Hospitals \nAvailable Beds: 53",
+                  onTap: () {}),
+            ),
+            Marker(
+              width: 80.0,
+              height: 80.0,
+              point: LatLng(12.9054, 77.6175),
+              builder: (ctx) => MarkerWithTooltip(
+                  child: Icon(
+                    Icons.local_hospital,
+                    color: Colors.red,
+                    size: 50,
+                  ),
+                  tooltip: "Raj Therapy Clinic \n Available Beds: 3",
+                  onTap: () {}),
+            ),
+            Marker(
+              width: 80.0,
+              height: 80.0,
+              point: LatLng(12.9080, 77.6307),
+              builder: (ctx) => MarkerWithTooltip(
+                  child: Icon(
+                    Icons.local_hospital,
+                    color: Colors.red,
+                    size: 50,
+                  ),
+                  tooltip: "Sai Hospital \n Available Beds: 7",
+                  onTap: () {}),
+            ),
+            Marker(
+              width: 80.0,
+              height: 80.0,
+              point: LatLng(12.8891, 77.6185),
+              builder: (ctx) => MarkerWithTooltip(
+                  child: Icon(
+                    Icons.local_hospital,
+                    color: Colors.red,
+                    size: 50,
+                  ),
+                  tooltip: "Chegum Hospitals \n Available Beds: 17",
+                  onTap: () {}),
+            ),
+            Marker(
+              width: 80.0,
+              height: 80.0,
+              point: LatLng(12.8905, 77.5968),
+              builder: (ctx) => MarkerWithTooltip(
+                  child: Icon(
+                    Icons.local_hospital,
+                    color: Colors.red,
+                    size: 50,
+                  ),
+                  tooltip: "Apollo Hospitals \n Available Beds: 124",
+                  onTap: () {}),
             ),
           ]),
         ],

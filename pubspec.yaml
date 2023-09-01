@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  flutter_native_splash: ^2.2.19
   firebase_auth: ^4.3.0
   firebase_core: ^2.8.0
   cloud_firestore: ^4.4.5
@@ -22,6 +23,15 @@ dependencies:
   flutter_svg: ^2.0.4
   flutter_map_marker_popup: ^2.1.2
   google_maps_flutter: ^2.2.5
+  url_launcher: ^6.0.3
+  firebase_storage: ^11.1.0
+  path_provider: ^2.0.14
+  dio: ^5.1.1
+  permission_handler: ^8.2.8
+  flutter_pdfview: ^1.0.4
+  webview_flutter: ^2.0.15
+  flutter_local_notifications: ^7.0.0
+  rxdart: ^0.27.1
 
 dev_dependencies:
   flutter_test:

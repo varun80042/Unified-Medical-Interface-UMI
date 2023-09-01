@@ -7,6 +7,7 @@ import 'package:hashcode/screens/signUP.dart';
 import 'package:hashcode/screens/home.dart';
 import 'package:hashcode/screens/map.dart';
 import 'package:hashcode/screens/booking.dart';
+import 'package:hashcode/screens/details.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +21,7 @@ class DotSlash extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/home',
+      initialRoute: '/',
       routes: {
         '/' : (context) => Choice(),
         '/login' : (context) => LoginPage(),
@@ -28,6 +29,7 @@ class DotSlash extends StatelessWidget {
         '/home' : (context) => HomePage(),
         '/map' : (context) => MapPage(),
         '/book' : (context) => MyMapLauncher(),
+        '/details' : (context) => AmbulanceDetailsPage(),
       },
     );
   }
